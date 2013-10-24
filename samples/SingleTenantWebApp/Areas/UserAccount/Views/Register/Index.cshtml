@@ -3,43 +3,64 @@
     ViewBag.Title = "Register";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary("Please correct the following errors")
-    @Html.AntiForgeryToken()
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form accept-charset="UTF-8" role="form" method="post">
+            <div>
+                @Html.ValidationSummary()
+                @Html.AntiForgeryToken()
+            </div>
+            <fieldset>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Username" name="username" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="E-Mail" name="email" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Confirm Password" name="confirmPassword" type="password" value="">
+                </div>
+                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Register">
+            </fieldset>
+        </form>
+    </div>
+</div>
 
-    <fieldset class="editor small">
-        <legend>@ViewBag.Title</legend>
 
-        @Html.EditorForModel()
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
 
-        <div >
-            <button class="btn btn-default">Register</button>
-        </div>
+        @using (Html.BeginForm("Confirm", "Register", FormMethod.Get))
+        {
+            <fieldset>
+                <legend>Confirm</legend>
+                <p>
+                    <label for="id">Key</label>
+                    <input id="id" name="id" />
+                </p>
+                <p><button class="btn btn-default">Submit</button></p>
+            </fieldset>
+        }
 
-    </fieldset>
-}
+    </div>
+</div>
 
-@using (Html.BeginForm("Confirm", "Register", FormMethod.Get))
-{
-    <fieldset>
-        <legend>Confirm</legend>
-        <p>
-            <label for="id">Key</label>
-            <input id="id" name="id" />
-        </p>
-        <p ><button class="btn btn-default">Submit</button></p>
-    </fieldset>
-}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
 
-@using (Html.BeginForm("Cancel", "Register", FormMethod.Get))
-{
-    <fieldset>
-        <legend>Cancel</legend>
-        <p>
-            <label for="id">Key</label>
-            <input id="id" name="id" />
-        </p>
-        <p ><button class="btn btn-default">Submit</button></p>
-    </fieldset>
-}
+        @using (Html.BeginForm("Cancel", "Register", FormMethod.Get))
+        {
+            <fieldset>
+                <legend>Cancel</legend>
+                <p>
+                    <label for="id">Key</label>
+                    <input id="id" name="id" />
+                </p>
+                <p><button class="btn btn-default">Submit</button></p>
+            </fieldset>
+        }
+    </div>
+</div>

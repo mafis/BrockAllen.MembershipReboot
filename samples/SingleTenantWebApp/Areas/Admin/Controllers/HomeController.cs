@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace BrockAllen.MembershipReboot.Mvc.Areas.Admin.Controllers
 {
+    [Authorize(Roles="Administrator")]
     public class HomeController : Controller
     {
         IUserAccountRepository userAccountRepository;
