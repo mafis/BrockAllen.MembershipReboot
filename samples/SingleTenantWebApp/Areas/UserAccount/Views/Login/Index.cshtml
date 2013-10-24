@@ -2,6 +2,7 @@
     ViewBag.Title = "Login";
 }
 
+
 <h2>Login</h2>
 @if (User.Identity.IsAuthenticated)
 {
@@ -23,11 +24,12 @@
 
         @Html.EditorForModel()
 
-        <div class="buttons">
-            <button>Login</button>
+        <div class="btn">
+            <button class="btn btn-default">Login</button>
         </div>
 
     </fieldset>
 }
 
 <p>Or to use a client certificate to login click @Html.ActionLink("here", "CertificateLogin")</p>
+    

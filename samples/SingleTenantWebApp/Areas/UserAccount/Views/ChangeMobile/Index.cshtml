@@ -21,7 +21,7 @@
             @Html.EditorFor(x=>x.NewMobilePhone)
             @Html.ValidationMessageFor(x=>x.NewMobilePhone)
         </p>
-        <div class="buttons">
+        <div >
             <button name="button" value="change">Change Mobile Phone Number</button>
             <button name="button" value="remove" class="disable">Remove Mobile Phone Number</button>
         </div>
@@ -37,6 +37,6 @@
             <label for="code">Code</label>
             <input id="code" name="code" />
         </p>
-        <p class="buttons"><button>Submit</button></p>
+        <p ><button class="btn btn-default">Submit</button></p>
     </fieldset>
 }

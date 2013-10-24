@@ -22,7 +22,7 @@
                     @Html.AntiForgeryToken()
                     <input type="hidden" name="provider" value="@account.ProviderName" />
                     <input type="hidden" name="id" value="@account.ProviderAccountID" />
-                    <button>remove</button>
+                    <button class="btn btn-default">remove</button>
                 }
                 @account.ProviderName (@account.ProviderAccountID)
             </li>

@@ -9,49 +9,68 @@
 </head>
 <body>
     <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#">Brand</a>
-  </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Identity Manager</a>
+        </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-           @if (User.Identity.IsAuthenticated)
-        {
-            <li>@Html.ActionLink("Logout", "Index", "Logout")</li>
-            <li>@Html.ActionLink("Change Password", "Index", "ChangePassword")</li>
-            <li>@Html.ActionLink("Change Username", "Index", "ChangeUsername")</li>
-            <li>@Html.ActionLink("Change Email", "Index", "ChangeEmail")</li>
-            <li>@Html.ActionLink("Change Mobile Phone Number", "Index", "ChangeMobile")</li>
-            <li>@Html.ActionLink("Configure Client Certificates", "Index", "Certificate")</li>
-            <li>@Html.ActionLink("Configure Two Factor Authentication", "Index", "TwoFactorAuth")</li>
-            <li>@Html.ActionLink("Manage external provider", "Manage", "LinkedAccount")</li>
-            <li>@Html.ActionLink("Close Account", "Index", "CloseAccount")</li>
-        }
-        else
-        {
-            <li>@Html.ActionLink("Login", "Index", "Login")</li>
-            <li>@Html.ActionLink("Login with external provider", "Index", "LinkedAccount")</li>
-            <li>@Html.ActionLink("Email Username", "Index", "SendUsernameReminder")</li>
-            <li>@Html.ActionLink("Register", "Index", "Register")</li>
-            <li>@Html.ActionLink("Reset Password", "Index", "PasswordReset")</li>
-        }
-        <li>@Html.ActionLink("Admin Account Lookup", "Index", "Home", new { area="Admin" }, null)</li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Change Password", "Index", "ChangePassword")</li>
+                            <li>@Html.ActionLink("Change Username", "Index", "ChangeUsername")</li>
+                            <li>@Html.ActionLink("Change Email", "Index", "ChangeEmail")</li>
+                            <li>@Html.ActionLink("Change Mobile Phone Number", "Index", "ChangeMobile")</li>
+                        </ul>
+                    </li>
+               
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("Configure Client Certificates", "Index", "Certificate")</li>
+                            <li>@Html.ActionLink("Configure Two Factor Authentication", "Index", "TwoFactorAuth")</li>
+                        </ul>
+                    </li>
+               
+         
+                    <li>@Html.ActionLink("Manage external provider", "Manage", "LinkedAccount")</li>
+                    <li>@Html.ActionLink("Close Account", "Index", "CloseAccount")</li>       
+                    <li>@Html.ActionLink("Logout", "Index", "Logout")</li>
+
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    <li>@Html.ActionLink("Login with external provider", "Index", "LinkedAccount")</li>
+                    <li>@Html.ActionLink("Email Username", "Index", "SendUsernameReminder")</li>
+                    <li>@Html.ActionLink("Register", "Index", "Register")</li>
+                    <li>@Html.ActionLink("Reset Password", "Index", "PasswordReset")</li>
+                }
+                <li>@Html.ActionLink("Admin Account Lookup", "Index", "Home", new { area = "Admin" }, null)</li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="container">
 
 
+        @RenderBody()
 
-    @RenderBody()
-    
+    </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
