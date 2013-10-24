@@ -4,12 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        @if (User.Identity.IsAuthenticated)
+    <nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Brand</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+           @if (User.Identity.IsAuthenticated)
         {
             <li>@Html.ActionLink("Logout", "Index", "Logout")</li>
             <li>@Html.ActionLink("Change Password", "Index", "ChangePassword")</li>
@@ -31,9 +45,15 @@
         }
         <li>@Html.ActionLink("Admin Account Lookup", "Index", "Home", new { area="Admin" }, null)</li>
     </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
 
 
     @RenderBody()
-
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
