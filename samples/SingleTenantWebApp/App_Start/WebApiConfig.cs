@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace BrockAllen.MembershipReboot.Mvc.App_Start
+namespace CIC.IdentityManager.Web.App_Start
 {
     public static class WebApiConfig
     {

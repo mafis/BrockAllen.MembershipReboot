@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BrockAllen.MembershipReboot;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.Admin.Controllers
+namespace CIC.IdentityManager.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles="Administrator")]
     public class HomeController : Controller

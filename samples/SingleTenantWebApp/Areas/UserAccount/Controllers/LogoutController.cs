@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using BrockAllen.MembershipReboot;
+using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 {
     public class LogoutController : Controller
     {

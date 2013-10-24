@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Models
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Models
 {
     public class ChangeEmailFromKeyInputModel
     {

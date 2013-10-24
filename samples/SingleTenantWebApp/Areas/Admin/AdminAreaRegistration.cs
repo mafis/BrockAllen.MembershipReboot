@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.Admin
+namespace CIC.IdentityManager.Web.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration
     {

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.App_Start
+namespace CIC.IdentityManager.Web.App_Start
 {
     public class FilterConfig
     {

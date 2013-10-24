@@ -1,5 +1,5 @@
 ﻿
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Models
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Models
 {
     public class ChangeMobileRequestInputModel
     {

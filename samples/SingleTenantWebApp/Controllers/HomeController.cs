@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Controllers
+namespace CIC.IdentityManager.Web.Controllers
 {
     public class HomeController : Controller
     {

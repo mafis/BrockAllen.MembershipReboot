@@ -1,4 +1,5 @@
-﻿using BrockAllen.MembershipReboot.Mvc.App_Start;
+﻿using BrockAllen.MembershipReboot;
+using CIC.IdentityManager.Web.App_Start;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Web.Helpers;
@@ -7,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace BrockAllen.MembershipReboot.Mvc
+namespace CIC.IdentityManager.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801

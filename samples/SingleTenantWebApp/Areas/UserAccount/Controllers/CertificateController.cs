@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BrockAllen.MembershipReboot;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 {
     [Authorize]
     public class CertificateController : Controller

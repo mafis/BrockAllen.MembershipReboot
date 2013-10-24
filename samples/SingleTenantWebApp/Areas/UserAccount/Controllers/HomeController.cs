@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BrockAllen.MembershipReboot;
+using System;
 using System.Security.Claims;
 using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 {
     public class HomeController : Controller
     {

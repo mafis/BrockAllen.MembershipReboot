@@ -1,4 +1,5 @@
-﻿using BrockAllen.OAuth2;
+﻿using BrockAllen.MembershipReboot;
+using BrockAllen.OAuth2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 {
     public class LinkedAccountController : Controller
     {

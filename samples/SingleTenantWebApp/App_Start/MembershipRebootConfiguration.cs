@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BrockAllen.MembershipReboot;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace BrockAllen.MembershipReboot.Mvc.App_Start
+namespace CIC.IdentityManager.Web.App_Start
 {
     public class MembershipRebootConfig
     {

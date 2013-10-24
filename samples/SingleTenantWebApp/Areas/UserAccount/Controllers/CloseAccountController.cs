@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BrockAllen.MembershipReboot;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
+namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 {
     [Authorize]
     public class CloseAccountController : Controller
