@@ -3,10 +3,10 @@
 }
 
 <h2>Login With:</h2>
-<ul>
-    <li>@Html.ActionLink("Google", "Login", new { type = BrockAllen.OAuth2.ProviderType.Google })</li>
+<ul class="list-unstyled">
+    <li class="btn btn-default">@Html.ActionLink("Google", "Login", new { type = BrockAllen.OAuth2.ProviderType.Google })</li>
     @*<li>@Html.ActionLink("Live", "Login", new { type = BrockAllen.OAuth2.ProviderType.Live})</li>*@
-    <li>@Html.ActionLink("Facebook", "Login", new { type = BrockAllen.OAuth2.ProviderType.Facebook})</li>
+    <li class="btn btn-default">@Html.ActionLink("Facebook", "Login", new { type = BrockAllen.OAuth2.ProviderType.Facebook })</li>
 </ul>
 @{
     var id = System.Security.Claims.ClaimsPrincipal.Current;

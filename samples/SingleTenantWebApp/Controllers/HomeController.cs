@@ -6,7 +6,7 @@ namespace BrockAllen.MembershipReboot.Mvc.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "Home", new { area = "UserAccount" });
+            return RedirectToAction("Index", "Login", new { area = "UserAccount" });
         }
 
     }
