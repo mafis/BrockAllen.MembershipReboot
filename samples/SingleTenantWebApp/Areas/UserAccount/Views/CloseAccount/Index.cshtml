@@ -2,19 +2,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Close Account</h2>
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary("Errors")
-    @Html.AntiForgeryToken()
-    
-    <fieldset>
-        <legend>Close Account</legend>
-        <p>
-            Are you sure you want to close your account?
-        </p>
-        <div >
-            <button value="yes" name="button">Yes, Close Account</button>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form accept-charset="UTF-8" role="form" method="post">
+                    <div>
+                        @Html.ValidationSummary()
+                        @Html.AntiForgeryToken()
+                    </div>
+                    <fieldset>
+                        <div>
+                            Are you sure you want to close your account?
+                        </div>
+                        <button value="yes" class="btn btn-lg btn-danger btn-block">Yes, Close Account</button>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-    </fieldset>
-}
+    </div>
+</div>
