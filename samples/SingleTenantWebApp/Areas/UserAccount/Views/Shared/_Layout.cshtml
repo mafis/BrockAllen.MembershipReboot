@@ -25,6 +25,7 @@
             <ul class="nav navbar-nav">
                 @if (User.Identity.IsAuthenticated)
                 {
+                    <li>@Html.ActionLink("Profile", "Index", "Home")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -34,7 +35,7 @@
                             <li>@Html.ActionLink("Change Mobile Phone Number", "Index", "ChangeMobile")</li>
                         </ul>
                     </li>
-               
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configure <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -43,10 +44,10 @@
                             <li>@Html.ActionLink("Configure Two Factor Authentication", "Index", "TwoFactorAuth")</li>
                         </ul>
                     </li>
-               
-         
+
+
                     <li>@Html.ActionLink("Manage external provider", "Manage", "LinkedAccount")</li>
-                    <li>@Html.ActionLink("Close Account", "Index", "CloseAccount")</li>       
+                    <li>@Html.ActionLink("Close Account", "Index", "CloseAccount")</li>
                     <li>@Html.ActionLink("Logout", "Index", "Logout")</li>
 
                 }
@@ -56,9 +57,9 @@
                     <li>@Html.ActionLink("Login with external provider", "Index", "LinkedAccount")</li>
                     <li>@Html.ActionLink("Register", "Index", "Register")</li>
                 }
-                @if(User.IsInRole("Administrator"))
+                @if (User.IsInRole("Administrator"))
                 {
-                <li>@Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Admin", "Index", "Home", new { area = "Admin" }, null)</li>
                 }
             </ul>
         </div>

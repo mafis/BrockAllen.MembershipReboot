@@ -2,11 +2,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>User Account Home</h2>
+
 
 @if (User.Identity.IsAuthenticated)
 {
-    <h2>Signed In</h2>
+    <h2>Profile</h2>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object dp img-circle" src="http://placehold.it/150x150" style="width: 100px;height:100px;">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">@User.Identity.Name <small> @System.Security.Claims.ClaimsPrincipal.Current.Claims.First(d => d.Type == System.Security.Claims.ClaimTypes.Country).Value</small></h4>
+                    <hr style="margin:8px auto">
+
+                    <ul>
+                        <li>@System.Security.Claims.ClaimsPrincipal.Current.Claims.First(d => d.Type == System.Security.Claims.ClaimTypes.Email).Value</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     using (Html.BeginForm())
     {
         <fieldset>
@@ -29,11 +48,13 @@ else
 }
 
 <h3>Your Claims</h3>
-<dl>
-    @foreach (var claim in System.Security.Claims.ClaimsPrincipal.Current.Claims)
-    {
-        <dt>@claim.Type</dt>
-        <dd>@claim.Value</dd>
-        <dd>@claim.Issuer</dd>
-    }
-</dl>
+    <dl>
+        @foreach (var claim in System.Security.Claims.ClaimsPrincipal.Current.Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+            <dd>@claim.Issuer</dd>
+        }
+    </dl>
+
+
