@@ -19,7 +19,7 @@ namespace CIC.IdentityManager.Web.Areas.UserAccount.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(ClaimsPrincipal.Current);
         }
 
         [Authorize]
