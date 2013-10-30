@@ -44,6 +44,7 @@ namespace CIC.IdentityManager.Web
                 account = svc.GetByID(account.ID);
                 account.AddClaim(ClaimTypes.Role, "Administrator");
                 account.AddClaim(ClaimTypes.Role, "Manager");
+                account.AddClaim(ClaimTypes.Role, "IdentityServerAdministrators");                
                 account.AddClaim(ClaimTypes.Country, "USA");
                 svc.Update(account);
             }
