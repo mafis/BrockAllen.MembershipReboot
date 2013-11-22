@@ -11,7 +11,6 @@ namespace CIC.IdentityManager.Web.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using BrockAllen.MembershipReboot;
-    using BrockAllen.MembershipReboot.Ef;
 
     public static class NinjectWebCommon 
     {
@@ -59,27 +58,27 @@ namespace CIC.IdentityManager.Web.App_Start
             kernel.Bind<MembershipRebootConfiguration>().ToConstant(config);
             kernel.Bind<AuthenticationService>().To<SamAuthenticationService>();
 
-            RegisterEntityFramework(kernel);
-            //RegisterMongoDb(kernel);
+            //RegisterEntityFramework(kernel);
+            RegisterMongoDb(kernel);
             //RegisterRavenDb(kernel);
         }
 
-        private static void RegisterEntityFramework(IKernel kernel)
-        {
-            System.Data.Entity.Database.SetInitializer<DefaultMembershipRebootDatabase>(new System.Data.Entity.CreateDatabaseIfNotExists<DefaultMembershipRebootDatabase>());
-            kernel.Bind<IUserAccountRepository>().ToMethod(ctx => new DefaultUserAccountRepository()).InRequestScope();
-        }
+        //private static void RegisterEntityFramework(IKernel kernel)
+        //{
+        //    System.Data.Entity.Database.SetInitializer<DefaultMembershipRebootDatabase>(new System.Data.Entity.CreateDatabaseIfNotExists<DefaultMembershipRebootDatabase>());
+        //    kernel.Bind<IUserAccountRepository>().ToMethod(ctx => new DefaultUserAccountRepository()).InRequestScope();
+        //}
 
         // To use MongoDB:
         // - Add a reference to the BrockAllen.MembershipReboot.MongoDb project.
         // - Uncomment this method.
         // - Call this method instead of RegisterEntityFramework in the RegisterServices method above.
 
-        //private static void RegisterMongoDb(IKernel kernel)
-        //{
-        //    kernel.Bind<MongoDb.MongoDatabase>().ToSelf().WithConstructorArgument("connectionStringName", "MongoDb");
-        //    kernel.Bind<IUserAccountRepository>().To<MongoDb.MongoUserAccountRepository>();
-        //}
+        private static void RegisterMongoDb(IKernel kernel)
+        {
+            kernel.Bind<BrockAllen.MembershipReboot.MongoDb.MongoDatabase>().ToSelf().WithConstructorArgument("connectionStringName", "MongoDb");
+            kernel.Bind<IUserAccountRepository>().To<BrockAllen.MembershipReboot.MongoDb.MongoUserAccountRepository>();
+        }
 
 
         // To use RavenDB::
